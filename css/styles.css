@@ -133,6 +133,17 @@ More global CSS
     background: var(--clr-ptimary-light);
 }
 /* 
+Header
+*/
+.clearfix::before, 
+.clearfix::after {
+    /* Prevents other elements to wrap 
+    around our float elements */
+    content: "";
+    clear: both;
+    display: table;
+}
+/* 
 ========
 Header
 ========
@@ -222,4 +233,18 @@ Skills
 
 .skill:hover .skill-icon {
     transform: translateY(-5px);
+}
+
+/* Create 2 columns layout using float */
+@media screen and (min-width: 576px) {
+    .skill {
+        float: left;
+        width: calc(100vw / 2);
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .skill {
+        width: calc(100vw / 4);
+    }
 }
